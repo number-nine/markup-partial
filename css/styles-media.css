@@ -1,0 +1,452 @@
+@media (max-width: 767px) {
+
+
+    .header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-primary);
+    }
+
+    .header__menu-wrapper {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: calc(100% + 1px);
+
+
+        flex-direction: column;
+
+        width: 100%;
+        height: calc(100vh - 65px);
+        padding: 40px;
+
+        background-color: var(--background-primary);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+        transform: translateY(-105%);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .page__container {
+        max-width: 428px;
+        min-width: 384px
+    }
+
+    .page__container--clients {
+        /* max-width: 384px; */
+    }
+
+    .menu-button--pressed~.header__menu-wrapper {
+        transform: translateY(0);
+    }
+
+    .header__logo,
+    .menu-button {
+        position: relative;
+    }
+
+    .menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+
+    }
+
+    .menu-button__illustration {
+        display: block;
+        height: 16px;
+        width: 24px;
+
+        fill: var(--dark);
+    }
+
+    .menu-button__icon--close {
+        display: none;
+    }
+
+    .menu-button--pressed .menu-button__icon--close {
+        display: block;
+    }
+
+    .menu-button--pressed .menu-button__icon--open {
+        display: none;
+    }
+
+    .menu__link {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.11;
+    }
+
+    .contacts__item {
+        min-height: 40px;
+
+    }
+
+    .contacts__link {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .contacts__link:hover,
+    .contacts__link:focus {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.11;
+    }
+
+    .social-links--mobile {
+        display: flex;
+        column-gap: 0;
+        justify-content: space-between;
+
+        margin-top: 48px;
+    }
+
+    .card__title--feature {
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 768px) {
+    :root {
+        --cards-gap: 24px;
+    }
+
+    .page__container {
+        width: 768px;
+    }
+
+    .page__container--header {
+        justify-content: start;
+
+    }
+
+    .page__container--clients {
+        width: 584px;
+
+    }
+
+    .page__container--footer {
+        width: 582px;
+    }
+
+    .header__logo {
+        margin-right: 120px;
+    }
+
+    .header__menu-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .menu__list {
+        flex-direction: row;
+        column-gap: 40px;
+    }
+
+    .menu__link {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .menu__link--current:after {
+        --height: 4px;
+
+        content: "";
+
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: var(--height);
+
+        background-color: var(--action-active);
+        border-radius: 2px;
+
+    }
+
+    .contacts__list {
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    .contacts__link {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: 0.04em;
+    }
+
+    .section--type_team {
+        padding-bottom: 104px;
+    }
+
+    .section__title--hero {
+        margin-bottom: 40px;
+        max-width: 498px;
+
+        font-size: 56px;
+        line-height: 1.07;
+    }
+
+    .section__content {
+        column-gap: var(--cards-gap);
+    }
+
+    .section__content--filter {
+        justify-content: center;
+    }
+
+    .section__content--team {
+        row-gap: 64px;
+    }
+
+    .section__content--feature>* {
+        --elements-in-row: 2;
+    }
+
+    .section__content--team>* {
+        --elements-in-row: 2;
+    }
+
+    .section__content--clients>* {
+        --elements-in-row: 3;
+    }
+
+    .section__content--gallery>* {
+        --elements-in-row: 2;
+    }
+
+    .footer__block--logo {
+        margin-right: 24px;
+    }
+
+    .footer__subtitle {
+        text-align: left;
+    }
+
+    .footer__blocks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: start;
+    }
+
+    .subscribe-form {
+        flex-direction: row;
+        column-gap: var(--cards-gap);
+        align-items: center;
+    }
+
+    .filter-form {
+        margin-bottom: 64px;
+    }
+
+    .section__content--hero {
+        height: 436px;
+        max-width: 768px;
+
+        background-image:
+            linear-gradient(var(--hero-background), var(--hero-background)),
+            url("../images/people-office-768x436-opt.jpg");
+    }
+}
+
+@media (max-width: 1199px) {
+    .card__title--feature {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+    }
+
+    .card__text--feature {
+        font-weight: 500;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .page__container {
+        width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .page__body--no-scroll {
+        padding-right: 17px;
+    }
+
+    .header__logo {
+        margin-right: 76px;
+    }
+
+    .contacts__list {
+        flex-direction: row;
+        column-gap: 40px;
+    }
+
+    .contacts__link {
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        font-size: inherit;
+    }
+
+    .section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .section--type_hero {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .section--type_features {
+        padding-bottom: 60px;
+    }
+
+    .section--type_services {
+        display: block;
+        padding-top: 60px;
+    }
+
+    .section--with-filters {
+        padding-top: 96px;
+    }
+
+    .section__title--hero {
+        margin-bottom: 48px;
+        max-width: 498px;
+    }
+
+    .section__content {
+        column-gap: var(--cards-gap);
+        row-gap: calc(2 * var(--cards-gap));
+    }
+
+    .section__content--feature>* {
+        --elements-in-row: 4;
+    }
+
+    .section__content--services>* {
+        --elements-in-row: 3;
+    }
+
+    .section__content--team>* {
+        --elements-in-row: 4;
+    }
+
+    .section__content--clients>* {
+        --elements-in-row: 6;
+    }
+
+    .section__content--gallery>* {
+        --elements-in-row: 3;
+    }
+
+    .card__image--feature {
+        width: 64px;
+        height: 64px;
+    }
+
+    .card__illustration--feature {
+        display: flex;
+        min-height: 112px;
+        padding: 4px;
+        margin-bottom: 8px;
+
+        background-color: var(--light);
+        border-radius: 4px;
+    }
+
+    .footer {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 0;
+    }
+
+    .footer__block--logo {
+        margin-right: 120px;
+    }
+
+    .footer__block--socials {
+        margin-right: 80px;
+    }
+
+    .filter-form {
+        margin-bottom: 72px;
+    }
+
+    .section__content--hero {
+        height: 600px;
+        max-width: 1400px;
+        padding-top: 188px;
+
+        background-image:
+            linear-gradient(var(--hero-background), var(--hero-background)),
+            url("../images/people-office-1400x600-opt.jpg");
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 767px) and (min-device-pixel-ratio: 2),
+(max-width: 767px) and (min-resolution: 192dpi),
+(max-width: 767px) and (min-resolution: 2dppx) {
+
+    .section__content--hero {
+        background-image:
+            linear-gradient(var(--hero-background), var(--hero-background)),
+            url("../images/people-office-428x432-opt@2x.jpg");
+    }
+}
+
+@media (min-width: 768px) and (min-device-pixel-ratio: 2),
+(min-width: 768px) and (min-resolution: 192dpi),
+(min-width: 768px) and (min-resolution: 2dppx) {
+
+    .section__content--hero {
+        background-image:
+            linear-gradient(var(--hero-background), var(--hero-background)),
+            url("../images/people-office-768x436-opt@2x.jpg");
+    }
+}
+
+
+@media (min-width: 1200px) and (min-device-pixel-ratio: 2),
+(min-width: 1200px) and (min-resolution: 192dpi),
+(min-width: 1200px) and (min-resolution: 2dppx) {
+
+
+    .section__content--hero {
+        background-image:
+            linear-gradient(var(--hero-background), var(--hero-background)),
+            url("../images/people-office-1400x600-opt@2x.jpg");
+    }
+}
